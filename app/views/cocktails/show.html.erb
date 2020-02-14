@@ -1,0 +1,40 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdni.rbth.com/rbthmedia/images/2018.09/original/5bacfbd115e9f95b8d4d6dc5.jpg);">
+  <div class="container">
+    <h1 class="text-center mb-3"><strong>La fabrique à cocktails</strong></h1>
+    <p class="text-center mb-3">Les détails du cocktail</p>
+    <div class="btn-center">
+      <%= link_to "Voir la liste de tous les cocktails", cocktails_path, class:'btn-banner m-3 center' %>
+    </div>
+    <div class="btn-center">
+      <%= link_to "Ajouter une dose au cocktail", new_cocktail_dose_path(@cocktail), class:'btn-banner m-3 center' %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <% @cocktail.doses.each do |dose| %>
+      <div class="card text-center">
+        <% url = "https://source.unsplash.com/1600x900/?cocktail," + @cocktail.name.gsub(" ", "_") %>
+        <img class="card-img-top" src= <%= url %> alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= @cocktail.name.capitalize %></h5>
+          <p><%= dose.description %></p>
+          <%= link_to 'Détruire à tout jamais', dose_path(dose), class:"btn btn-danger mx-3", method: :delete, data: { confirm: 'Es-tu sûr ?'} %>
+          <%= link_to "ajouter une dose de kiff", new_cocktail_dose_path(@cocktail), class:'btn btn-ghost m-2' %>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at La Fabrique à cocktails
+  </div>
+</div>

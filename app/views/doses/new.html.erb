@@ -1,0 +1,30 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://file1.grazia.fr/var/grazia/storage/images/article/cocktails-sans-alcool-3-recettes-tendance-pour-vos-invites-820303/13446762-5-fre-FR/3-cocktails-branches-et-sans-alcool-pour-impressionner-vos-invites.jpg?alias=original);">
+  <div class="container">
+    <h1 class="text-center mb-3"><strong>La fabrique à cocktails</strong></h1>
+    <p class="text-center mb-3">Ajouter une dose au cocktail</p>
+    <div class="btn-center">
+      <%= link_to "Voir la liste de tous les cocktails", cocktails_path, class:'btn-banner m-3 center' %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <%= f.submit "Ajoute du kiff dans ton cocktail", class: "btn btn-ghost mt-3" %>
+  <% end %>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at La Fabrique à cocktails
+  </div>
+</div>

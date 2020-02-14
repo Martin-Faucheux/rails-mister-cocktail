@@ -1,0 +1,41 @@
+ <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.covigneron.com/wp-content/uploads/2019/01/coctails-a-base-de-vin.jpg);">
+  <div class="container">
+    <h1 class="text-center mb-3"><strong>La fabrique à cocktails</strong></h1>
+    <p class="text-center mb-3">Découvrez tous les cocktails qui vont vous faire rouler dans le caniveau</p>
+    <div class="btn-center">
+      <%= link_to "Créer un cocktail", new_cocktail_path, class:'btn-banner m-3 center' %>
+    </div>
+  </div>
+</div>
+
+ <div class="container">
+  <div class='row'>
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-12 col-md-4">
+        <div class="card text-center">
+          <% url = "https://source.unsplash.com/1600x900/?cocktail," + cocktail.name.gsub(" ", "_") %>
+          <img class="card-img-top" src= <%= url %> alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= cocktail.name %></h5>
+            <%= link_to "Avoir plus de détails", cocktail_path(cocktail), class:"btn btn-ghost" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="text-center new-cocktail">
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at La Fabrique à cocktails
+  </div>
+</div>

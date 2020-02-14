@@ -1,0 +1,32 @@
+ <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static.actu.fr/uploads/2019/11/cocktails-festival-lille-quartier-libre-854x481.jpeg);">
+  <div class="container">
+    <h1 class="text-center mb-3"><strong>La fabrique à cocktails</strong></h1>
+    <p class="text-center mb-3">Ajouter un cocktail</p>
+    <div class="btn-center">
+      <%= link_to "Voir la liste de tous les cocktails", cocktails_path, class:'btn-banner m-3 center' %>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="m-5">
+    <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name %>
+      <%= f.submit "add a cocktail", class: "btn btn-ghost m-2" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at La Fabrique à cocktails
+  </div>
+</div>
